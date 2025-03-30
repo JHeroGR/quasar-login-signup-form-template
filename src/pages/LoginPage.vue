@@ -1,31 +1,49 @@
 <template>
-  <q-page
-  class="flex flex-center"
-  padding
-  >
-  <div>
-    <h5 class="q-my-md text-center">
-      Login
-    </h5>
-    <q-card>
-      <q-card-section>
-        <q-input
-          label="email"
-          placeholder="email@example.com"
-          filled />
 
-        <q-input
-          label="password"
-          placeholder="password"
-          filled />
-      </q-card-section>
-      <q-btn
-        label=""
-    </q-card>
-  </div>
-</q-page>
+  <q-page class="flex flex-center" padding>
+    <div class="full-width" style="max-width: 400px;">
+      <h5 class="q-my-md text-center">
+        Login Form
+      </h5>
+
+      <q-card class="q-pa-md" :style="{ backgroundColor: backgroundColor }">
+
+        <q-card-section>
+
+          <q-form>
+
+            <q-input label="Email" placeholder="email@example.com" filled class="q-mb-md" />
+
+            <q-input label="Password" type="password" filled />
+
+            <q-checkbox label="Remember Me" :model-value="true" />
+
+            <div class="row q-gutter-sm">
+              <q-btn label="login" class="full-width col" color="primary" />
+
+              <q-btn label="forgot password?" class="full-width col" color="primary" />
+            </div>
+          </q-form>
+
+        </q-card-section>
+      </q-card>
+
+      <q-btn class="flex-center" flat color="dark" label="Go To SignUp Form" to="/signup" />
+
+
+    </div>
+
+  </q-page>
+
 </template>
 
-<script setup>
+<script>
+export default {
+  data() {
+    return {
+      backgroundColor: '#fffff',
+    }
+  }
+}
 //
 </script>
