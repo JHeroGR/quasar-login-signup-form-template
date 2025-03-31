@@ -20,12 +20,17 @@
 
             <q-input label="Verify Password" type="password" filled />
 
+            <q-btn label="already have an account?" flat to="/login" filled />
+
+            <div class="row" filled>
+
+              <q-btn label="signup" class="full-width" color="positive" />
+
+            </div>
+            
           </q-form>
 
         </q-card-section>
-
-        <q-btn label="signup" class="full-width" color="positive" />
-
 
       </q-card>
 

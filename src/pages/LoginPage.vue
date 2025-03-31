@@ -19,9 +19,9 @@
             <q-checkbox label="Remember Me" :model-value="true" />
 
             <div class="row q-gutter-sm">
-              <q-btn label="login" class="full-width col" color="primary" />
+              <q-btn label="login" class="full-width col-3" color="primary" />
 
-              <q-btn label="forgot password?" class="full-width col" color="primary" />
+              <q-btn label="forgot password?" class="full-width col-3" color="primary" />
             </div>
           </q-form>
 
