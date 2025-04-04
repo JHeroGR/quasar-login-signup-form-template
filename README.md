@@ -1,40 +1,33 @@
-# Quasar App (quasar-login-template)
+# Quasar Login/SignUp Form (quasar-login-signup-template)
 
-A Quasar Project
+A beginner login and sign up form template designed in Quasar for programmers and developers to use in their projects.
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
+## Purpose
+The purpose of this template is to simplify a beginner or seasoned programmer's journey of building a login/signup template from scratch in the case they want or are used to the Quasar framework. This is also a good learning tool for developers who want to get into App development.
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+<hr>
 
+### Prerequisites
+- NPM
+- Vue CLI
+- Quasar CLI (optional, see Quasar docs)
 
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
+<hr>
 
+### Checklist
+- ✅ Designed both SignUp and Login Forms
+- ✅ Added Icons
+- ✅ Added a Link that redirects in between both Login and Sign Up forms
 
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
+<hr>
 
+### Coming soon?
+- ◻️ Dark Toggle
+- ◻️ Dark Toggle
+- ◻️ Dark Toggle
+- ◻️ Dark Toggle
 
-### Build the app for production
-```bash
-quasar build
-```
+<hr>
 
 ### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js), I used material-icons as the iconSet.

@@ -6,17 +6,25 @@
         Login Form
       </h5>
 
-      <q-card class="q-pa-md" :style="{ backgroundColor: backgroundColor }">
+      <q-card class="q-pa-md">
 
         <q-card-section>
 
           <q-form>
 
-            <q-input label="Email" placeholder="email@example.com" filled class="q-mb-md" />
+            <q-input label="Email" placeholder="email@example.com" filled class="q-mb-md">
+              <template v-slot:prepend>
+                <q-icon name="mdi-email" />
+              </template>
+            </q-input>
 
-            <q-input label="Password" type="password" filled />
+            <q-input label="Password" placeholder="password" filled class="q-mb-md">
+              <template v-slot:prepend>
+                <q-icon name="mdi-lock" />
+              </template>
+            </q-input>
 
-            <q-checkbox label="Remember Me" :model-value="true" />
+            <q-checkbox label="Remember Me" :model-value="true" class="q-mb-md"/>
 
             <div class="row q-gutter-sm">
               <q-btn label="login" class="full-width col-3" color="primary" />
