@@ -22,10 +22,13 @@ The purpose of this template is to simplify a beginner or seasoned programmer's 
 <hr>
 
 ### Coming soon?
-- ◻️ Dark Toggle
-- ◻️ Dark Toggle
-- ◻️ Dark Toggle
-- ◻️ Dark Toggle
+- ◻️ Dark Toggle, Transitions, Animations?
+- ◻️ Form Validation
+- ◻️ Email Verification?
+- ◻️ Database for Email Storage?
+- ◻️ API Integration?
+- ◻️ OAuth Integration?
+- ◻️ Deployment?
 
 <hr>
 
