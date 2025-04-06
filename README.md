@@ -1,4 +1,4 @@
-# Quasar Login/SignUp Form (quasar-login-signup-template)
+# Quasar Login/SignUp Form
 
 A beginner login and sign up form template designed in Quasar for programmers and developers to use in their projects.
 
