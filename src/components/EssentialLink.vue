@@ -1,27 +1,8 @@
 <template>
-
+  <q-btn color="primary" to="/login" class="q-mr-md q-ml-md">Login</q-btn>
+  <q-btn color="positive" to="/signup" class="q-mr-md">SignUp</q-btn>
 </template>
 
 <script setup>
-const props = defineProps({
-  title: {
-    type: String,
-    required: true
-  },
 
-  caption: {
-    type: String,
-    default: ''
-  },
-
-  link: {
-    type: String,
-    default: '#'
-  },
-
-  icon: {
-    type: String,
-    default: ''
-  }
-})
 </script>
