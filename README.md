@@ -19,12 +19,12 @@ The purpose of this template is to simplify a beginner or seasoned programmer's 
 - ✅ Added Icons
 - ✅ Added a Link that redirects in between both Login and Sign Up forms
 - ✅ Login, Sign Up, and Dark Mode Toggle Buttons added
+- ✅ Form Validation
 
 <hr>
 
 ### Coming soon? 
 - ◻️ Transitions, Animations?
-- ◻️ Form Validation
 - ◻️ Email Verification?
 - ◻️ Database for Email Storage?
 - ◻️ API Integration?
