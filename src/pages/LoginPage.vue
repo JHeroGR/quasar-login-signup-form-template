@@ -48,7 +48,7 @@
 <script setup>
 import { ref } from 'vue'
 import isEmail from 'validator/lib/isEmail'
-import isStrongPassword from 'validator/lib/isStrongPassword'
+// import isStrongPassword from 'validator/lib/isStrongPassword'
 
 const email = ref('')
 const password = ref('')
@@ -56,6 +56,17 @@ const rememberMeCheckbox = ref(true)
 
 const required = val => !!val || "This field is required"
 const isEmailValid = val => isEmail(val) || "Invalid email format"
-const isPasswordValid = val => isStrongPassword(val, { minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1}) || "Password must be strong (e.g., 8+ chars, 1 uppercase, 1 lowercase, 1 number, 1 symbol)"
+// const isPasswordValid = val => isStrongPassword(val, { minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1}) || "Password must be strong (e.g., 8+ chars, 1 uppercase, 1 lowercase, 1 number, 1 symbol)"
+const isPasswordValid = val => {
+  const errors = []
+
+  if (!val || val.length < 8) errors.push('At least 8 characters')
+  if (!/[a-z]/.test(val)) errors.push('At least 1 lowercase character')
+  if (!/[A-Z]/.test(val)) errors.push('At least 1 uppercase character')
+  if (!/[0-9]/.test(val)) errors.push('At least 1 number')
+  if (!/[^A-Za-z0-9]/.test(val)) errors.push('At least 1 symbol (e.g. !$#@)')
+
+  return errors.length === 0 || `Password must include: ${errors.join(', ')}`
+}
 
 </script>
