@@ -25,7 +25,7 @@
             </q-input>
 
             <div class="row q-mb-md">
-              <q-checkbox v-model="rememberMeCheckbox" label="Remember Me" :model-value="true" class="q-mt-mx col"/>
+              <q-checkbox v-model="rememberMeCheckbox" label="Remember Me" class="q-mt-mx col"/>
 
               <q-btn label="don't have an account?" flat to="/signup" filled class="q-mt-mx col" />
             </div>
@@ -52,7 +52,7 @@ import isStrongPassword from 'validator/lib/isStrongPassword'
 
 const email = ref('')
 const password = ref('')
-const rememberMeCheckbox = ref('')
+const rememberMeCheckbox = ref(true)
 
 const required = val => !!val || "This field is required"
 const isEmailValid = val => isEmail(val) || "Invalid email format"
