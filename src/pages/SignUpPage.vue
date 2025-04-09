@@ -29,7 +29,7 @@
             </q-input>
 
 
-            <q-input label="Verify Password" type="password" filled class="q-mt-mx">
+            <q-input v-model="confirmPassword" label="Verify Password" type="password" filled class="q-mt-mx" :rules="[required, doPasswordsMatch]">
               <template v-slot:prepend>
                 <q-icon name="mdi-lock" />
               </template>
@@ -58,6 +58,7 @@
 
               <q-icon :name="hasSymbol ? 'check' : 'close'" :color="hasSymbol ? 'green' : 'red'" />
               At least 1 symbol (e.g. !@#$)
+
             </div>
 
             <q-btn label="already have an account?" flat to="/login" filled class="q-mb-md" />
@@ -85,6 +86,9 @@ import { ref, computed } from 'vue'
 const name = ref('')
 const email = ref('')
 const password = ref('')
+const confirmPassword = ref('')
+
+const doPasswordsMatch = val => val === password.value || 'Passwords do not match'
 
 const hasMinLength = computed(() => password.value.length >= 8)
 const hasLowercase = computed(() => /[a-z]/.test(password.value))
