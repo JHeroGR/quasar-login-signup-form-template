@@ -35,11 +35,36 @@
               </template>
             </q-input>
 
+            <div class="q-mt-sm q-ml-md">
+              <q-icon :name="hasMinLength ? 'check' : 'close'" :color="hasMinLength ? 'green' : 'red'" />
+              At least 8 characters
+
+              <br />
+
+              <q-icon :name="hasLowercase ? 'check' : 'close'" :color="hasLowercase ? 'green' : 'red'" />
+              At least 1 lowercase letter
+
+              <br />
+
+              <q-icon :name="hasUppercase ? 'check' : 'close'" :color="hasUppercase ? 'green' : 'red'" />
+              At least 1 uppercase letter
+
+              <br />
+
+              <q-icon :name="hasNumber ? 'check' : 'close'" :color="hasNumber ? 'green' : 'red'" />
+              At least 1 number
+
+              <br />
+
+              <q-icon :name="hasSymbol ? 'check' : 'close'" :color="hasSymbol ? 'green' : 'red'" />
+              At least 1 symbol (e.g. !@#$)
+            </div>
+
             <q-btn label="already have an account?" flat to="/login" filled class="q-mb-md" />
 
             <div class="row" filled>
 
-              <q-btn label="signup" class="full-width" color="positive" />
+              <q-btn label="signup" class="full-width" color="positive" :disble="!isPasswordValid" />
 
             </div>
 
@@ -55,27 +80,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import isEmail from 'validator/lib/isEmail'
-import isEmpty from 'validator/lib/isEmpty'
+import { ref, computed } from 'vue'
 
 const name = ref('')
 const email = ref('')
 const password = ref('')
 
-const required = val => !!val || "This field is required"
-const isEmailValid = val => isEmail(val) || "Invalid email format"
-const isEmptyName = val => isEmpty(val) || "Name cannot be blank!"
-const isPasswordValid = val => {
-  const errors = []
+const hasMinLength = computed(() => password.value.length >= 8)
+const hasLowercase = computed(() => /[a-z]/.test(password.value))
+const hasUppercase = computed(() => /[A-Z]/.test(password.value))
+const hasNumber = computed(() => /[0-9]/.test(password.value))
+const hasSymbol = computed(() => /[^A-Za-z0-9]/.test(password.value))
 
-  if (!val || val.length < 8) errors.push('At least 8 characters')
-  if (!/[a-z]/.test(val)) errors.push('At least 1 lowercase character')
-  if (!/[A-Z]/.test(val)) errors.push('At least 1 uppercase character')
-  if (!/[0-9]/.test(val)) errors.push('At least 1 number')
-  if (!/[^A-Za-z0-9]/.test(val)) errors.push('At least 1 symbol (e.g. !$#@)')
-
-  return errors.length === 0 || `Password must include: ${errors.join(', ')}`
-}
+const isPasswordValid = computed(() =>
+  hasMinLength.value &&
+  hasLowercase.value &&
+  hasUppercase.value &&
+  hasNumber.value &&
+  hasSymbol.value
+)
 
 </script>
